@@ -2,12 +2,10 @@
 NAME = push_swap
 
 # Compilateur et flags
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
-
-# Libft
+CC = clang
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
+CFLAGS = -Wall -Wextra -Werror -g -O3 -polly
 
 # Recherche automatique des fichiers .c
 SRC = $(shell find -name "*.c")
