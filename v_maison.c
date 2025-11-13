@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   v_maison.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: TonLogin42 <ton.login@42.fr>               +#+  +:+       +#+        */
+/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 23:25:09 by TonLogin42        #+#    #+#             */
-/*   Updated: 2025/11/13 02:09:20 by TonLogin42       ###   ########.fr       */
+/*   Updated: 2025/11/13 14:21:06 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "libft.h"
+# include "lookup.h"
 
 typedef struct s_item {
   char *order;
@@ -25,7 +28,22 @@ typedef struct s_data {
   t_list *stack_b;
 } t_data;
 
-void ft_exec(t_data *data, int toprint) {
+const	t_lookup call_table[] = {
+	{"ra", &rx},
+	{"rb", &rx},
+	{"rr", &rrx},
+	{"rra", &rrx},
+	{"rrb", &rrx},
+	{"rrr", &rrx},
+	{"pa", &px},
+	{"pb", &px},
+};
+
+void ft_exec(t_data *data, int toprint)
+{
+	t_call fn;
+	fn = call_table[data.]
+  
   (void)data->stack_a;
   (void)data->stack_b;
 }

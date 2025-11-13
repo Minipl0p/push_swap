@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:20:27 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/13 18:00:07 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/13 18:04:13 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,3 @@ int main(int ac, char **av)
 	printf("Nombre total de combinaisons: %d\n", count);
 	return 0;
 }
-
