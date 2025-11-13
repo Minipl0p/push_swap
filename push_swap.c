@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:11:17 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/12 15:47:59 by tseche           ###   ########.fr       */
+/*   Updated: 2025/11/13 18:09:24 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,11 @@ int	main(int ac, char **av)
 	}
 	t_list	*stack_b;
 	stack_b = NULL;
-/*
+	char *order;
+	order = malloc(10000);
+	ft_bench(order, &stack_a, &stack_b, 4, 0);
+	free(order);
+	/*
 	*while (stack_a is ordered){ 
 	* simuler tous les moves possible avec une profondeur de X
 	* calculer le score de chaque sequence

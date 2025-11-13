@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:53:28 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/07 12:31:33 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/13 17:47:07 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -41,6 +41,7 @@ char		*ft_itoa(int n);
 
 size_t		ft_strlen(const char *str);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
+size_t		ft_strcpy(char *dest, const char *src);
 size_t		ft_strlcat(char *dest, const char *src, size_t l);
 
 int			ft_strncmp(const char *s1, const char *s2, size_t n);

@@ -6,35 +6,28 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:20:27 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/13 18:04:13 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/13 23:03:26 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include <stdio.h>
+#include "push_swap.h"
 #include <stdlib.h>
-#include <string.h>
-
-typedef struct s_data
-{
-	char **moves;
-	int		max_depth;
-}				t_data;
 
 int ft_rules(const char *prev, const char *next)
 {
-	if (!strcmp(prev,"ra"))
-		return (!strcmp(next,"ra"));
-	if (!strcmp(prev,"rb"))
-		return (!strcmp(next,"rb"));
-	if (!strcmp(prev,"rra"))
-		return (!strcmp(next,"rra")||!strcmp(next,"rb"));
-	if (!strcmp(prev,"rrb"))
-		return (!strcmp(next,"rrb")||!strcmp(next,"ra"));
-	if (!strcmp(prev,"rr"))
-		return (!strcmp(next,"rr")||!strcmp(next,"ra")||!strcmp(next,"rb"));
-	if (!strcmp(prev,"rrr"))
-		return (!strcmp(next,"rrr")||!strcmp(next,"rrb")||!strcmp(next,"rra"));
+	if (!ft_strncmp(prev,"ra", 4))
+		return (!ft_strncmp(next,"ra", 4));
+	if (!ft_strncmp(prev,"rb", 4))
+		return (!ft_strncmp(next,"rb", 4));
+	if (!ft_strncmp(prev,"rra", 4))
+		return (!ft_strncmp(next,"rra", 4)||!ft_strncmp(next,"rb", 4));
+	if (!ft_strncmp(prev,"rrb", 4))
+		return (!ft_strncmp(next,"rrb", 4)||!ft_strncmp(next,"ra", 4));
+	if (!ft_strncmp(prev,"rr", 4))
+		return (!ft_strncmp(next,"rr", 4)||!ft_strncmp(next,"ra", 4)||!ft_strncmp(next,"rb", 4));
+	if (!ft_strncmp(prev,"rrr", 4))
+		return (!ft_strncmp(next,"rrr", 4)||!ft_strncmp(next,"rrb", 4)||!ft_strncmp(next,"rra", 4));
 	return 0;
 }
 
@@ -45,8 +38,8 @@ void ft_benchmark(char seq[][4], int depth, t_data init, int *count)
 
 	j = -1;
 	while (++j < depth)
-		printf("%s ", seq[j]);
-	printf("\n");
+		// printf("%s ", seq[j]);
+	// printf("\n");
 	(*count)++;
 	if (depth == init.max_depth)
 		return;
