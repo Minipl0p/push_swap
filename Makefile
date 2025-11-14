@@ -10,8 +10,8 @@ BLUE  := \033[0;34m
 NC    := \033[0m # No Color
 
 # --- Configuration ---
-NAME   := myprog
-CC     := gcc
+NAME   := push_swap
+CC     := cc
 CFLAGS := -Wall -Wextra -Werror -I$(INCDIR) -MMD -MP
 AR     := ar rcs
 
@@ -24,9 +24,11 @@ LIBNAME:= libft.a
 LIB    := $(LIBDIR)/$(LIBNAME)
 
 # --- Sources et objets ---
-SRCS := $(wildcard $(SRCDIR)/*.c)
-OBJS := $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
-DEPS := $(OBJS:.o=.d)
+SRCS := src/ft_pars.c \
+		src/ft_pars_utils.c \
+		src/ft_scoring.c
+
+OBJS := $($(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
 
 # --- Commandes utiles ---
 LIBMAKE := $(MAKE) --no-print-directory -C $(LIBDIR)
