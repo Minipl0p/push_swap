@@ -6,15 +6,15 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 23:25:09 by TonLogin42        #+#    #+#             */
-/*   Updated: 2025/11/14 00:07:15 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:27:10 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
-#include "libft/libft.h"
-#include "push_swap.h"
-#include "lookup.h"
+#include "../libft/libft.h"
+#include "../header/push_swap.h"
+#include "../header/lookup.h"
 
 const	t_lookup call_table[];
 call_table = {{"ra", &rx}, {"rb", &rx}, {"rr", &rrx}, {"rra", &rrx}, {"rrb", &rrx},{"rrr", &rrx}, {"pa", &px}, {"pb", &px},

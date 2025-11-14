@@ -6,12 +6,12 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:20:27 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/13 23:03:26 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:27:43 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../header/push_swap.h"
 #include <stdlib.h>
 
 int ft_rules(const char *prev, const char *next)

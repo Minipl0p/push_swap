@@ -6,12 +6,12 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 11:31:52 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/11 17:33:25 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:27:40 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../header/push_swap.h"
 
 void	px(t_list **stack_out, t_list **stack_in, char move, int toprint)
 {

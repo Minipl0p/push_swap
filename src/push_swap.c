@@ -6,12 +6,12 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:11:17 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/13 18:09:24 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:27:23 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft/libft.h"
+#include "../header/push_swap.h"
+#include "../libft/libft.h"
 #include <unistd.h>
 #include <stdlib.h>
 

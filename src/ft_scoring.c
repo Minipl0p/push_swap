@@ -6,13 +6,13 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 22:31:22 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/13 23:25:43 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:27:30 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../header/push_swap.h"
 
 int	ft_break_count(t_list *stack_a, t_list *stack_b)
 {

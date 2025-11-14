@@ -6,14 +6,14 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 19:29:36 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/13 23:07:24 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:28:39 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 
 typedef struct s_item {

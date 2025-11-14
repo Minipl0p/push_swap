@@ -6,11 +6,11 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:09:33 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/11/11 17:31:31 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/11/14 12:24:39 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "../libft/libft.h"
 
 void	r_rotate(t_list **stack)
 {

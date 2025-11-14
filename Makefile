@@ -1,49 +1,75 @@
-# Nom de l'exécutable
-NAME = push_swap
+# =========================
+# Makefile (42-friendly) - Version ultra-clean
+# =========================
 
-# Compilateur et flags
-CC = clang
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
-CFLAGS = -Wall -Wextra -Werror -g -O3 -polly
+# --- Couleurs ANSI ---
+RED   := \033[0;31m
+GREEN := \033[0;32m
+YELLOW:= \033[0;33m
+BLUE  := \033[0;34m
+NC    := \033[0m # No Color
 
-# Recherche automatique des fichiers .c
-SRC = $(shell find -name "*.c")
-OBJ = $(SRC:%.c=%.o)
+# --- Configuration ---
+NAME   := myprog
+CC     := gcc
+CFLAGS := -Wall -Wextra -Werror -I$(INCDIR) -MMD -MP
+AR     := ar rcs
 
-# Commandes
-RM = rm -rf
+# --- Chemins ---
+SRCDIR := src
+INCDIR := header
+OBJDIR := obj
+LIBDIR := libft
+LIBNAME:= libft.a
+LIB    := $(LIBDIR)/$(LIBNAME)
 
-# Règle principale
-all: $(LIBFT) $(NAME)
+# --- Sources et objets ---
+SRCS := $(wildcard $(SRCDIR)/*.c)
+OBJS := $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRCS))
+DEPS := $(OBJS:.o=.d)
 
-# Compilation de l’exécutable
-$(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -I. -L$(LIBFT_DIR) -o $(NAME)
-	@echo "Compilation terminée : $(NAME)"
+# --- Commandes utiles ---
+LIBMAKE := $(MAKE) --no-print-directory -C $(LIBDIR)
+RM      := rm -rf
+MKDIR   := mkdir -p
 
-# Compilation des .o
-%.o: %.c
-	@$(CC) $(CFLAGS) -I. -I$(LIBFT_DIR) -c $< -o $@
+# --- Phony targets ---
+.PHONY: all clean fclean re libs libclean help
 
-# Compilation de la libft
-$(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR)
+# --- Règles ---
+all: libs $(NAME)
 
-# Nettoyage des objets
+$(NAME): $(OBJS) $(LIB)
+	@echo "$(BLUE)🔗 Linking $@...$(NC)"
+	@$(CC) $(CFLAGS) $(OBJS) -L$(LIBDIR) -l:$(LIBNAME) -o $@
+	@echo "$(GREEN)✅ Built $@$(NC)"
+
+libs:
+	@echo "$(BLUE)📦 Building library in $(LIBDIR)...$(NC)"
+	@$(LIBMAKE)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@$(MKDIR) $(dir $@)
+	@echo "$(YELLOW)🔨 Compiling $< -> $@$(NC)"
+	@$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	@$(RM) %.o
-	@$(MAKE) -C $(LIBFT_DIR) clean
-	@echo "Fichiers objets supprimés"
+	@echo "$(RED)🧹 Cleaning objects...$(NC)"
+	@$(RM) $(OBJDIR)
 
-# Nettoyage complet
-fclean: clean
-	@$(RM) $(NAME)
-	@$(MAKE) -C $(LIBFT_DIR) fclean
-	@echo "Tout a été supprimé"
+libclean:
+	@echo "$(RED)🧹 Cleaning lib in $(LIBDIR)...$(NC)"
+	@$(LIBMAKE) clean
 
-# Recompilation totale
+fclean: clean libclean
+	@echo "$(RED)🗑️ Removing binary $(NAME) and library $(LIBNAME)...$(NC)"
+	@$(RM) $(NAME) $(LIB)
+
 re: fclean all
 
-.PHONY: all clean fclean re
-
+help:
+	@echo "$(BLUE)=== Makefile Help ===$(NC)"
+	@echo "$(BLUE)NAME:$(NC) $(NAME)"
+	@echo "$(BLUE)SRCS:$(NC) $(SRCS)"
+	@echo "$(BLUE)OBJS:$(NC) $(OBJS)"
+	@echo "$(BLUE)LIB:$(NC) $(LIB)"
